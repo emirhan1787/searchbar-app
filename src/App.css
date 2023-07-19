@@ -1,38 +1,119 @@
-.App {
-  text-align: center;
+.maincontainer{
+    display: flex;
+    height: auto;
+    flex-wrap: wrap;
+    align-content: space-between;
+    margin-left: 94px;
+    margin-top: -85px;
+    
+}
+.maincontainer > div {
+    display:block;
+    width: 395px;
+    height: 269px;
+    flex-shrink: 0;
+    border-radius: 24px;
+    margin-left: 125px;
+    margin-top: 125px;
+    justify-content: center;
+    align-items: center;
+}
+.topDiv{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top:35px;
+    
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.wind{
+    color: #EB5757;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.bnb{
+    width: 69px;
+    height: 14px;
+    flex-shrink: 0;
+    margin-left: 109px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.searchbar{
+    position: relative;
+    width: 297px;
+    height: 55px;
+    flex-shrink: 0;
+    margin-right:96px;
+    
 }
-
-.App-link {
-  color: #61dafb;
+.h1{
+    color: #333;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.h1div{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+.h1{
+    margin-left: 91px;
+    color: #333;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.h1text{
+    position: relative;
+    margin-right: 99px;
+}
+.superHost{
+    border-radius: 12px;
+    border: 1px solid #4F4F4F;
+    color: #4F4F4F;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    
+    
+}
+.descText{
+    color: var(--gray-3, #828282);
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-left: 15px;
+}
+.star{
+    margin-left: 65px;
+    width: 24px;
+    height: 18px;
+    flex-shrink: 0;
+    
+}
+.rating{
+    color: #4F4F4F;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-left: 3px;
+    
+}
+.searchBar{
+    border:1px solid #828282;
+    border-radius: 4px;
 }
