@@ -55,11 +55,11 @@ function App() {
           <img src='images/logo.png' className="wind" alt='windb' />
         </div>
         <div className='searchbar'>
-          <form action='/action_page.html'>
-            <label for='gsearch' className='searchLabel'>search on site</label>
-            <input type='search' id='gsearch' name='gsearch' className='searchBar'></input>
-            <input type="submit" value="Submit"></input>
-          </form>
+            <input className='locationSearch' type="text" placeholder="Location"/>
+            <input className='guestSearch' type="text" placeholder='Guests'/>
+            <img  className='searchİcon' src='images/searchicon.png'/>
+            <button type="submit"><i class="fa fa-search"></i></button>
+          
         </div>
       </div>
 
@@ -75,15 +75,12 @@ function App() {
       <div className='maincontainer'>
         {windBnb.map((item) => (
           <div className='mainContainerCard'>
-            <img style={{
-              width: "100%",
-              height: "100%"
-            }} src={item.img} alt='resim' />
+            <img className='hotelİmage' src={item.img} alt='resim' />
             <div>
               {/* ctrl k + c */}
               <div className='mainContainerCardInfo'>
                 {item.superHostMu && <text className='superHost'>Super host</text>}
-                <text className=''>{item.room}</text>
+                <text className='descText'>{item.room}</text>
                 <div>
                   <img className='' src='images/star.png' alt='start' />
                   <text className=''>{item.rating}</text>
@@ -101,5 +98,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
