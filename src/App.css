@@ -9,11 +9,11 @@
 }
 .maincontainer > div {
     display:block;
-    width: 395px;
-    height: 269px;
+    max-width: 395px;
+    max-height: 269px;
     flex-shrink: 0;
     border-radius: 24px;
-    margin-left: 125px;
+    margin-left: 95px;
     margin-top: 125px;
     justify-content: center;
     align-items: center;
@@ -116,4 +116,19 @@
 .searchBar{
     border:1px solid #828282;
     border-radius: 4px;
+}
+
+.maincontainer > div > img {
+    display:block;
+    max-width: 415px;
+    max-height: 269px;
+    flex-shrink: 0;
+    border-radius: 24px;
+    margin-left: 65px;
+    margin-top: 125px;
+    justify-content: center;
+    align-items: center;
+}
+.descH2{
+    margin-left: 95px;
 }
