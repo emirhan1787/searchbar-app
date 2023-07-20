@@ -1,33 +1,35 @@
-.maincontainer{
+.maincontainer {
     display: flex;
     height: auto;
     flex-wrap: wrap;
     align-content: space-between;
-    margin-left: 94px;
-    margin-top: -85px;
-    
+    gap: 130px;
 }
-.maincontainer > div {
-    display:block;
-    max-width: 395px;
-    max-height: 269px;
-    flex-shrink: 0;
-    border-radius: 24px;
-    margin-left: 95px;
-    margin-top: 125px;
+
+.mainContainerCard {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
-.topDiv{
+
+.mainContainerCardInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 15px 15px 60px;
+}
+
+.topDiv {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: space-between;
-    margin-top:35px;
-    
+    margin-top: 35px;
 }
 
-.wind{
+.wind {
     color: #EB5757;
     font-family: Poppins;
     font-size: 14px;
@@ -35,21 +37,24 @@
     font-weight: 700;
     line-height: normal;
 }
-.bnb{
+
+.bnb {
     width: 69px;
     height: 14px;
     flex-shrink: 0;
     margin-left: 109px;
 }
-.searchbar{
+
+.searchbar {
     position: relative;
     width: 297px;
     height: 55px;
     flex-shrink: 0;
-    margin-right:96px;
-    
+    margin-right: 96px;
+
 }
-.h1{
+
+.h1 {
     color: #333;
     font-family: Montserrat;
     font-size: 24px;
@@ -57,12 +62,14 @@
     font-weight: 700;
     line-height: normal;
 }
-.h1div{
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
+
+.h1div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
-.h1{
+
+.h1 {
     margin-left: 91px;
     color: #333;
     font-family: Montserrat;
@@ -71,11 +78,13 @@
     font-weight: 700;
     line-height: normal;
 }
-.h1text{
+
+.h1text {
     position: relative;
     margin-right: 99px;
 }
-.superHost{
+
+.superHost {
     border-radius: 12px;
     border: 1px solid #4F4F4F;
     color: #4F4F4F;
@@ -84,10 +93,9 @@
     font-weight: 700;
     line-height: normal;
     text-transform: uppercase;
-    
-    
 }
-.descText{
+
+.descText {
     color: var(--gray-3, #828282);
     font-family: Montserrat;
     font-size: 14px;
@@ -96,14 +104,15 @@
     line-height: normal;
     margin-left: 15px;
 }
-.star{
+
+/* .star {
     margin-left: 65px;
     width: 24px;
     height: 18px;
     flex-shrink: 0;
-    
-}
-.rating{
+} */
+
+/* .rating {
     color: #4F4F4F;
     font-family: Montserrat;
     font-size: 14px;
@@ -111,15 +120,15 @@
     font-weight: 500;
     line-height: normal;
     margin-left: 3px;
-    
-}
-.searchBar{
-    border:1px solid #828282;
+} */
+
+.searchBar {
+    border: 1px solid #828282;
     border-radius: 4px;
 }
 
-.maincontainer > div > img {
-    display:block;
+.maincontainer>div>img {
+    display: block;
     max-width: 415px;
     max-height: 269px;
     flex-shrink: 0;
@@ -129,6 +138,7 @@
     justify-content: center;
     align-items: center;
 }
-.descH2{
+
+.descH2 {
     margin-left: 95px;
 }
