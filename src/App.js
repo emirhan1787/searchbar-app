@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 
 const windBnb = [
@@ -48,20 +49,40 @@ const windBnb = [
 ]
 
 function App() {
+  const [barAcik, setBarAcik] = useState(false)
+
+  const handleBar = () => {
+    setBarAcik(!barAcik)
+  }
+
   return (
     <div className="App">
-      <div className="topDiv">
-        <div className='bnb'>{/*sol üst yazı*/}
-          <img src='images/logo.png' className="wind" alt='windb' />
+
+      {barAcik ? (
+        <div className='AppBar' onClick={() => handleBar()}>
+          <div className='acikBar'>
+          <input className='acikLocationSearch' type="text" placeholder="Add location" />
+            <input className='acikGuestSearch' type="text" placeholder='Add guests' />
+            <div className='acikSearchBtn'  onClick={() => handleBar()} ><img className='acikSearchİcon' src='images/searchicon.png' alt='icon'/> <text>Search</text></div>
+          </div>
+          <div className='chooser'>
+            <div className='locationChooser'><text>sadasfasf</text><text>fsadasd</text><text>sa</text>
+            </div>
+            <div className='guestChooser'><text>sadasfasf</text><text>fsadasd</text><text>sa</text></div>
+          </div>
         </div>
-        <div className='searchbar'>
-            <input className='locationSearch' type="text" placeholder="Location"/>
-            <input className='guestSearch' type="text" placeholder='Guests'/>
-            <img  className='searchİcon' src='images/searchicon.png'/>
-            <button type="submit"><i class="fa fa-search"></i></button>
-          
+      ) : (
+        <div className="topDiv">
+          <div className='bnb'>{/*sol üst yazı*/}
+            <img src='images/logo.png' className="wind" alt='windb' />
+          </div>
+          <div className='searchbar'>
+            <input className='locationSearch' type="text" placeholder="Location" />
+            <input className='guestSearch' type="text" placeholder='Guests' />
+            <img className='searchİcon' src='images/searchicon.png' alt='icon' onClick={() => handleBar()} />
+          </div>
         </div>
-      </div>
+      )}
 
       <br />
 
