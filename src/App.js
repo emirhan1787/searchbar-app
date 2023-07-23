@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 
 const windBnb = [
@@ -48,20 +49,29 @@ const windBnb = [
 ]
 
 function App() {
+  const [barAcik, setBarAcik] = useState(false)
+
+  const handleBar = () => {
+    setBarAcik(!barAcik)
+  }
+
   return (
     <div className="App">
-      <div className="topDiv">
-        <div className='bnb'>{/*sol üst yazı*/}
-          <img src='images/logo.png' className="wind" alt='windb' />
+
+      {barAcik ? (
+        <div className='AppBar' onClick={() => handleBar()}></div>
+      ) : (
+        <div className="topDiv">
+          <div className='bnb'>{/*sol üst yazı*/}
+            <img src='images/logo.png' className="wind" alt='windb' />
+          </div>
+          <div className='searchbar'>
+            <input className='locationSearch' type="text" placeholder="Location" />
+            <input className='guestSearch' type="text" placeholder='Guests' />
+            <img className='searchİcon' src='images/searchicon.png' alt='icon' onClick={() => handleBar()} />
+          </div>
         </div>
-        <div className='searchbar'>
-            <input className='locationSearch' type="text" placeholder="Location"/>
-            <input className='guestSearch' type="text" placeholder='Guests'/>
-            <img  className='searchİcon' src='images/searchicon.png'/>
-            <button type="submit"><i class="fa fa-search"></i></button>
-          
-        </div>
-      </div>
+      )}
 
       <br />
 

@@ -6,12 +6,21 @@
     max-width: 100%;
     margin-left: 65px;
     margin-top: 55px;
+    position: relative;
+}
+
+.AppBar {
+    width: 1440px;
+    height: 460px;
+    flex-shrink: 0;
+
+    background: #FFF;
 }
 
 .mainContainerCard {
     display: flex;
     flex-direction: column;
-  
+
     margin-top: -155px;
 }
 
@@ -21,9 +30,10 @@
     justify-content: space-between;
     padding: 15px 15px 15px 60px;
     max-width: 350px;
-    
+
 }
-.descH2{
+
+.descH2 {
     margin-left: 75px;
     margin-top: -15px;
 }
@@ -100,6 +110,8 @@
     font-weight: 700;
     line-height: normal;
     text-transform: uppercase;
+
+    padding: 5px;
 }
 
 .descText {
@@ -109,7 +121,7 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    
+
 }
 
 .star {
@@ -117,7 +129,7 @@
     width: 24px;
     height: 18px;
     flex-shrink: 0;
-} 
+}
 
 .rating {
     color: #4F4F4F;
@@ -127,7 +139,7 @@
     font-weight: 500;
     line-height: normal;
     margin-left: 3px;
-} 
+}
 
 
 .maincontainer>div>img {
@@ -143,19 +155,21 @@
 }
 
 
-.hotelİmage{
+.hotelİmage {
     width: 920px;
     height: 920px;
 }
+
 .search {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     margin-left: -225px;
-   
-    
-}   
-.searchbar{
+
+
+}
+
+.searchbar {
     border-radius: 16px;
     background: #FFF;
     box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.10);
@@ -166,7 +180,8 @@
     justify-content: center;
     align-items: flex-start;
 }
-.searchİcon{
+
+.searchİcon {
     display: inline;
     width: 17.048px;
     height: 17.058px;
@@ -174,19 +189,23 @@
     margin-top: 19px;
     margin-right: 16.95px;
     margin-bottom: 18px;
+
+    cursor: pointer;
 }
-.locationSearch{
+
+.locationSearch {
     height: auto;
     width: auto;
     margin-top: 16px;
     margin-bottom: 18px;
-    margin-left:16px;
+    margin-left: 16px;
     width: 118px;
     border: 0px;
     height: 25px;
- 
+
 }
-.guestSearch{
+
+.guestSearch {
     height: auto;
     width: auto;
     margin-top: 16px;
@@ -196,7 +215,8 @@
     border: 0px;
     height: 25px;
 }
-.searchBtn{
+
+.searchBtn {
     width: 61px;
     height: 55px;
     flex-shrink: 0;
