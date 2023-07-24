@@ -48,12 +48,15 @@ const windBnb = [
   },
 ]
 
+
 function App() {
   const [barAcik, setBarAcik] = useState(false)
 
   const handleBar = () => {
     setBarAcik(!barAcik)
   }
+
+  
 
   return (
     <div className="App">
@@ -68,7 +71,9 @@ function App() {
           <div className='chooser'>
             <div className='locationChooser'><text>sadasfasf</text><text>fsadasd</text><text>sa</text>
             </div>
-            <div className='guestChooser'><text>sadasfasf</text><text>fsadasd</text><text>sa</text></div>
+            <div className='guestChooser'>
+              
+            </div>
           </div>
         </div>
       ) : (
