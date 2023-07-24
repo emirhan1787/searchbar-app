@@ -48,31 +48,55 @@ const windBnb = [
   },
 ]
 
+const locations = [
+  "qewda", "dsadsa", "dasdsaa", "dasdsa"
+]
+
 
 function App() {
   const [barAcik, setBarAcik] = useState(false)
+  const [child, setChild] = useState(1)
+  const [adult, setAdult] = useState(2)
 
   const handleBar = () => {
     setBarAcik(!barAcik)
   }
 
-  
+  const removeChild = () => {
+    if (child === 0) {
+      return
+    }
+    setChild(child - 1)
+  }
+
+  const addChild = () => {
+    if (child === 5) {
+      return
+    }
+    setChild(child + 1)
+  }
+
 
   return (
     <div className="App">
 
       {barAcik ? (
-        <div className='AppBar' onClick={() => handleBar()}>
+        <div className='AppBar'>
           <div className='acikBar'>
-          <input className='acikLocationSearch' type="text" placeholder="Add location" />
+            <input className='acikLocationSearch' type="text" placeholder="Add location" />
             <input className='acikGuestSearch' type="text" placeholder='Add guests' />
-            <div className='acikSearchBtn'  onClick={() => handleBar()} ><img className='acikSearchİcon' src='images/searchicon.png' alt='icon'/> <text>Search</text></div>
+            <div className='acikSearchBtn' onClick={() => handleBar()} ><img className='acikSearchİcon' src='images/searchicon.png' alt='icon' /> <text>Search</text></div>
           </div>
           <div className='chooser'>
             <div className='locationChooser'><text>sadasfasf</text><text>fsadasd</text><text>sa</text>
             </div>
             <div className='guestChooser'>
-              <button></button>
+              Child<button onClick={() => addChild()}>+</button> {child}
+              <button onClick={() => removeChild()}>-</button>
+            </div>
+            <div className='guestChooser'>
+              Adult<button>+</button> {adult}
+              <button>-</button>
             </div>
           </div>
         </div>
@@ -112,7 +136,6 @@ function App() {
                   <text className=''>{item.rating}</text>
                 </div>
               </div>
-
               <div>
                 <h2 className='descH2'>{item.name}</h2>
               </div>
