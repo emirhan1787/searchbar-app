@@ -72,7 +72,7 @@ function App() {
             <div className='locationChooser'><text>sadasfasf</text><text>fsadasd</text><text>sa</text>
             </div>
             <div className='guestChooser'>
-              
+              <button></button>
             </div>
           </div>
         </div>
