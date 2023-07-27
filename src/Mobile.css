@@ -1,0 +1,123 @@
+@media only screen and (min-width: 320px) and (max-width: 1024px){
+
+    .bnb{
+        width: 21.651px;
+        height: 18.75px;
+        flex-shrink: 0;
+        margin-left: 13px;
+    }
+    .topDiv{
+        display: flex;
+        flex-direction: column;
+    }
+    .searchbar{
+        display: flex;
+        width: 297px;
+        height: 55px;
+        flex-shrink: 0;
+        margin-left: 105px;
+        margin-top: 5px;
+    }
+    .h1div{
+        display: flex;
+        flex-direction: row;
+        width: 480px;
+        flex-direction: space-between;
+        
+    }
+    .h1{
+        color: #333;
+        font-family: Montserrat;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-left: 41px;
+        width: 150px;
+    }
+    .h1text{
+        color: #4F4F4F;
+        font-family: Montserrat;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin-top: 15px;
+    }
+    .maincontainer{
+        width: 350px;
+        height: 190px;
+        flex-shrink: 0;
+        margin-left: -25px;
+        display: flex;
+        flex-direction: row;
+        margin-top: 0px;
+    }
+    .acikBar{
+        display: flex;
+        width: 480px;
+        height: 15px;
+        flex-shrink: 0;
+        margin-top: 93px;
+        margin-left: 23%;
+    
+        border-radius: 16px;
+        background: #FFF;
+        box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.10);  
+    }
+    .mainContainerCard {
+        display: flex;
+        flex-direction: column;
+        height: 280px;
+        margin-top: 0px;
+        align-items: center;
+        justify-content: center;
+    }
+    .AppBar {
+        display: flex;
+        flex-direction: column;
+        width: 480px;
+        height: 520px;
+        flex-shrink: 0;
+        background: #FFF;
+    }
+    .acikBar{
+        width: 351px;
+        height: 113px;
+        flex-shrink: 0;
+        flex-direction: column;
+        margin-left: 21px;
+        display: flex;
+
+    }
+    .chooser{
+        display: flex;
+        flex-wrap: no-wrap;
+        max-width: 480px;
+        height: 520px;
+        margin-left: -310px;
+    }
+    .locationText{
+        margin-left: 1px;
+    }
+    .acikSearchBtn{
+        display: flex;
+        background-color: #EB5757;
+        color: #F2F2F2;
+        width: 127px;
+        height: 48px;
+        flex-shrink: 0;
+        justify-content: center;
+        align-items: center;
+        border-radius: 16px;
+        box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.10);
+        position: absolute;
+        margin-left: 260px;
+        cursor: pointer;
+        margin-top: 320px;
+    }
+    .guestTotal{
+        margin-left: -55px;
+    }
+    
+}

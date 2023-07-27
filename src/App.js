@@ -1,7 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
-
+import './Mobile.css';
 
 const windBnb = [
   {
@@ -49,14 +48,14 @@ const windBnb = [
 ]
 
 const locations = [
-  "qewda", "dsadsa", "dasdsaa", "dasdsa"
+"Helsinki"||'helsinki',"Fİnland"||"finland","Turku"||"turku","Oulu"||"oulu","Vaasan"||"vaasa"
 ]
 
 
 function App() {
   const [barAcik, setBarAcik] = useState(false)
-  const [child, setChild] = useState(1)
-  const [adult, setAdult] = useState(2)
+  const [child, setChild] = useState(0)
+  const [adult, setAdult] = useState(0)
 
   const handleBar = () => {
     setBarAcik(!barAcik)
@@ -76,6 +75,19 @@ function App() {
     setChild(child + 1)
   }
 
+  const removeAdult = () => {
+    if (adult === 0) {
+      return
+    }
+    setAdult(adult - 1)
+  }
+
+  const addAdult = () => {
+    if (adult === 5) {
+      return
+    }
+    setAdult(adult + 1)
+  }
 
   return (
     <div className="App">
@@ -88,15 +100,37 @@ function App() {
             <div className='acikSearchBtn' onClick={() => handleBar()} ><img className='acikSearchİcon' src='images/searchicon.png' alt='icon' /> <text>Search</text></div>
           </div>
           <div className='chooser'>
-            <div className='locationChooser'><text>sadasfasf</text><text>fsadasd</text><text>sa</text>
+            <div className='locationChooser'>
+              <div className='locationText'>
+                <img className='locationİmg' src='images/location.png'></img>
+                <text className='locationText'>Helsinki, Finland</text>
+              </div>
+              <div className='locationText'>
+              <img className='locationİmg' src='images/location.png'></img>
+                <text className='locationText'>Turku, Finland</text>
+              </div>
+              <div className='locationText'>
+              <img className='locationİmg' src='images/location.png'></img>
+                <text className='locationText'>Oulu, Finland</text>
+              </div>
+              <div className='locationText'>
+              <img className='locationİmg' src='images/location.png'></img>
+                <text className='locationText'>Vaasa, Finland</text>
+              </div>
             </div>
-            <div className='guestChooser'>
-              Child<button onClick={() => addChild()}>+</button> {child}
-              <button onClick={() => removeChild()}>-</button>
-            </div>
-            <div className='guestChooser'>
-              Adult<button>+</button> {adult}
-              <button>-</button>
+              <div className='guestTotal'>
+                <text className='adultText'>Adult (Ages 13 or above)</text>
+                <div className='guestChooser'>
+                  
+                  <button className='numberButton' onClick={() =>addAdult()}>+</button> {adult}
+                  <button className='numberButton' onClick={()=> removeAdult()}>-</button>
+                </div>
+                <text className='adultText'>Child (Ages 2-12)</text>
+                <div className='guestChooser'>
+                
+                  <button className='numberButton' onClick={() => addChild()}>+</button> {child}
+                  <button className='numberButton' onClick={() => removeChild()}>-</button>
+               </div>
             </div>
           </div>
         </div>
