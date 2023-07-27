@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Mobile.css';
 
 const windBnb = [
@@ -8,47 +8,68 @@ const windBnb = [
     superHostMu: true,
     room: "Entire apartment . 2 beds",
     rating: 4.40,
-    name: "Stylist apartment in center of the city"
+    name: "Stylist apartment in center of the city",
+    location: "Helsinki, Finland",
+    child: 3,
+    adult: 3
   },
   {
     img: "images/hotel.jpeg",
     superHostMu: false,
     room: "Private room",
     rating: 4.25,
-    name: "Cozy, peaceful and private room with..."
+    name: "Cozy, peaceful and private room with...",
+    location: "Helsinki, Finland",
+    child: 1,
+    adult: 2
   },
   {
     img: "images/hotel.jpeg",
     superHostMu: false,
     room: "Entire house",
     rating: 4.96,
-    name: "Mordern House in a remote area"
+    name: "Mordern House in a remote area",
+    location: "Helsinki, Finland",
+    child: 2,
+    adult: 1
   },
   {
     img: "images/hotel.jpeg",
     superHostMu: true,
     room: "Entire apartment . 2 beds",
     rating: 4.85,
-    name: "Stylist room in design district "
+    name: "Stylist room in design district ",
+    location: "Vaasa, Finland",
+    child: 2,
+    adult: 2
   },
   {
     img: "images/hotel.jpeg",
     superHostMu: false,
     room: "Private room",
     rating: 4.54,
-    name: "Modern apartment close to nature"
+    name: "Modern apartment close to nature",
+    location: "Oulu, Finland",
+    child: 2,
+    adult: 2
   },
   {
     img: "images/hotel.jpeg",
     superHostMu: false,
     room: "Entire house",
     rating: 4.64,
-    name: "House in a remote area"
+    name: "House in a remote area",
+    location: "Turku, Finland",
+    child: 1,
+    adult: 3
   },
 ]
 
 const locations = [
-"Helsinki"||'helsinki',"Fİnland"||"finland","Turku"||"turku","Oulu"||"oulu","Vaasan"||"vaasa"
+  "Helsinki, Finland",
+  "Turku, Finland",
+  "Oulu, Finland",
+  "Vaasa, Finland"
 ]
 
 
@@ -56,6 +77,9 @@ function App() {
   const [barAcik, setBarAcik] = useState(false)
   const [child, setChild] = useState(0)
   const [adult, setAdult] = useState(0)
+  const [location, setLocation] = useState("")
+  const [filteredLocation, setFilteredLocation] = useState([])
+  const [filteredCardValue, setFilteredCardValue] = useState([])
 
   const handleBar = () => {
     setBarAcik(!barAcik)
@@ -89,48 +113,64 @@ function App() {
     setAdult(adult + 1)
   }
 
+  useEffect(() => {
+    const newLocation = locations?.filter((l) => l?.toLowerCase()?.includes(location?.toLowerCase()))
+    setFilteredLocation(newLocation)
+    const newFilteredCardValue = windBnb?.filter((item) => item?.location?.toLowerCase()?.includes(location?.toLowerCase()))
+    setFilteredCardValue(newFilteredCardValue)
+  }, [location])
+
+  useEffect(() => {
+    const newFilteredCardValue = windBnb?.filter((item) => item.adult >= adult || item.child <= child)
+    setFilteredCardValue(newFilteredCardValue)
+  }, [adult, child])
+
+
   return (
     <div className="App">
 
       {barAcik ? (
         <div className='AppBar'>
           <div className='acikBar'>
-            <input className='acikLocationSearch' type="text" placeholder="Add location" />
+            <input className='acikLocationSearch' type="text" placeholder="Add location" onChange={(e) => setLocation(e.target.value)} />
             <input className='acikGuestSearch' type="text" placeholder='Add guests' />
-            <div className='acikSearchBtn' onClick={() => handleBar()} ><img className='acikSearchİcon' src='images/searchicon.png' alt='icon' /> <text>Search</text></div>
+            <div className='acikSearchBtn' onClick={() => handleBar()} ><img className='acikSearchİcon' src='images/searchicon.png' alt='icon' /> <span>Search</span></div>
           </div>
           <div className='chooser'>
             <div className='locationChooser'>
-              <div className='locationText'>
-                <img className='locationİmg' src='images/location.png'></img>
+              {/* <div className='locationText'>
+                <img className='locationİmg' src='images/location.png' alt='a'></img>
                 <text className='locationText'>Helsinki, Finland</text>
               </div>
               <div className='locationText'>
-              <img className='locationİmg' src='images/location.png'></img>
+                <img className='locationİmg' src='images/location.png' alt='a'></img>
                 <text className='locationText'>Turku, Finland</text>
               </div>
               <div className='locationText'>
-              <img className='locationİmg' src='images/location.png'></img>
+                <img className='locationİmg' src='images/location.png' alt='a'></img>
                 <text className='locationText'>Oulu, Finland</text>
-              </div>
-              <div className='locationText'>
-              <img className='locationİmg' src='images/location.png'></img>
-                <text className='locationText'>Vaasa, Finland</text>
-              </div>
-            </div>
-              <div className='guestTotal'>
-                <text className='adultText'>Adult (Ages 13 or above)</text>
-                <div className='guestChooser'>
-                  
-                  <button className='numberButton' onClick={() =>addAdult()}>+</button> {adult}
-                  <button className='numberButton' onClick={()=> removeAdult()}>-</button>
+              </div> */}
+              {filteredLocation?.map((item, i) => (
+                <div className='locationText' key={i}>
+                  <img className='locationİmg' src='images/location.png' alt='a'></img>
+                  <span className='locationText'>{item}</span>
                 </div>
-                <text className='adultText'>Child (Ages 2-12)</text>
-                <div className='guestChooser'>
-                
-                  <button className='numberButton' onClick={() => addChild()}>+</button> {child}
-                  <button className='numberButton' onClick={() => removeChild()}>-</button>
-               </div>
+              ))}
+
+            </div>
+            <div className='guestTotal'>
+              <span className='adultText'>Adult (Ages 13 or above)</span>
+              <div className='guestChooser'>
+
+                <button className='numberButton' onClick={() => addAdult()}>+</button> {adult}
+                <button className='numberButton' onClick={() => removeAdult()}>-</button>
+              </div>
+              <span className='adultText'>Child (Ages 2-12)</span>
+              <div className='guestChooser'>
+
+                <button className='numberButton' onClick={() => addChild()}>+</button> {child}
+                <button className='numberButton' onClick={() => removeChild()}>-</button>
+              </div>
             </div>
           </div>
         </div>
@@ -151,23 +191,23 @@ function App() {
 
       <div className='h1div'>
         <h1 className='h1'>Stays in finland</h1>
-        <text className='h1text'>12+ stays</text>
+        <span className='h1text'>12+ stays</span>
       </div>
 
       <br />
 
       <div className='maincontainer'>
-        {windBnb.map((item) => (
-          <div className='mainContainerCard'>
+        {filteredCardValue?.map((item, key) => (
+          <div className='mainContainerCard' key={key}>
             <img className='hotelİmage' src={item.img} alt='resim' />
             <div>
               {/* ctrl k + c */}
               <div className='mainContainerCardInfo'>
-                {item.superHostMu && <text className='superHost'>Super host</text>}
-                <text className='descText'>{item.room}</text>
+                {item.superHostMu && <span className='superHost'>Super host</span>}
+                <span className='descText'>{item.room}</span>
                 <div>
                   <img className='' src='images/star.png' alt='start' />
-                  <text className=''>{item.rating}</text>
+                  <span className=''>{item.rating}</span>
                 </div>
               </div>
               <div>
