@@ -1,7 +1,6 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import './Mobile.css';
-import HotelCard from './components/HotelCard/HotelCard';
 
 const windBnb = [
   {
