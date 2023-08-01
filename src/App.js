@@ -1,7 +1,8 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import './Mobile.css';
-import HotelCard from './components/HotelCard/HotelCard';
+import HotelCard from './Components/HotelCard/HotelCard';
+
 
 const windBnb = [
   {
@@ -139,25 +140,12 @@ function App() {
           </div>
           <div className='chooser'>
             <div className='locationChooser'>
-              {/* <div className='locationText'>
-                <img className='locationİmg' src='images/location.png' alt='a'></img>
-                <text className='locationText'>Helsinki, Finland</text>
-              </div>
-              <div className='locationText'>
-                <img className='locationİmg' src='images/location.png' alt='a'></img>
-                <text className='locationText'>Turku, Finland</text>
-              </div>
-              <div className='locationText'>
-                <img className='locationİmg' src='images/location.png' alt='a'></img>
-                <text className='locationText'>Oulu, Finland</text>
-              </div> */}
               {filteredLocation?.map((item, i) => (
                 <div className='locationText' key={i}>
                   <img className='locationİmg' src='images/location.png' alt='a'></img>
                   <span className='locationText'>{item}</span>
                 </div>
               ))}
-
             </div>
             <div className='guestTotal'>
               <span className='adultText'>Adult (Ages 13 or above)</span>
