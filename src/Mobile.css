@@ -1,4 +1,4 @@
-@media only screen and (min-width: 320px) and (max-width: 1024px){
+@media only screen and (min-width: 280px) and (max-width: 1024px){
 
     .bnb{
         width: 21.651px;
@@ -9,20 +9,23 @@
     .topDiv{
         display: flex;
         flex-direction: column;
+        width: 90%;
+        background-color: purple;
     }
     .searchbar{
         display: flex;
-        width: 297px;
+        width: 100%;
         height: 55px;
         flex-shrink: 0;
-        margin-left: 105px;
         margin-top: 5px;
+        background-color: #333;
     }
     .h1div{
         display: flex;
         flex-direction: row;
-        width: 480px;
+        width: 90%;
         flex-direction: space-between;
+        background-color: aqua;
         
     }
     .h1{
@@ -32,8 +35,8 @@
         font-style: normal;
         font-weight: 700;
         line-height: normal;
-        margin-left: 41px;
-        width: 150px;
+        width: auto;
+        margin-left: 0px;
     }
     .h1text{
         color: #4F4F4F;
@@ -43,15 +46,18 @@
         font-weight: 500;
         line-height: normal;
         margin-top: 15px;
+        margin-right: 0px;
     }
     .maincontainer{
-        width: 350px;
+        width: 90%;
         height: 190px;
-        flex-shrink: 0;
-        margin-left: -25px;
+        flex-shrink: 1;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         margin-top: 0px;
+        background-color: #EB5757;
+        margin:0;
+        flex-wrap: nowrap;
     }
     .acikBar{
         display: flex;
@@ -72,6 +78,8 @@
         margin-top: 0px;
         align-items: center;
         justify-content: center;
+        background-color: aqua;
+        flex-shrink: 1;
     }
     .AppBar {
         display: flex;
