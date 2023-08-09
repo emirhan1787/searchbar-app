@@ -20,8 +20,18 @@ const HotelCard = ({item}) => {
                 </div>
             </div>
 
+            <div className='homepage'>
+                <div className='homeBady'>
+                    <span className=''></span>
+                  
+                </div>
+            </div>
+
         </div>
+
+   
     )
 }
 
 export default HotelCard
+

@@ -2,7 +2,7 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import './Mobile.css';
 import HotelCard from './Components/HotelCard/HotelCard';
-
+import Details from './Components/Details/Details';
 
 const windBnb = [
   {
@@ -72,6 +72,25 @@ const locations = [
   "Turku, Finland",
   "Oulu, Finland",
   "Vaasa, Finland"
+]
+
+const details = [
+  {
+    name: "item",
+    detail: "item detail"
+  },
+  {
+    name: "item",
+    detail: "item detail"
+  },
+  {
+    name: "item",
+    detail: "item detail"
+  },
+  {
+    name: "item",
+    detail: "item detail"
+  },
 ]
 
 
@@ -190,6 +209,11 @@ function App() {
           <HotelCard key={key} item={item} />
         ))}
       </div>
+
+      {details?.map((item, key) => (
+        <Details key={key} name={item?.name} propery={item?.detail} />
+      ))}
+
     </div>
   );
 }
